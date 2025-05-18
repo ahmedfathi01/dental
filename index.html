@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصنع منتجات الأسنان - الصفحة الرئيسية</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .feature-box {
+            background: #fff;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            padding: 2rem;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(230, 230, 230, 0.5);
+        }
+        
+        .feature-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(to bottom, var(--primary-light) 0%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+            transition: height 0.5s ease;
+            opacity: 0.5;
+        }
+        
+        .feature-box:hover::after {
+            height: 100%;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-color);
+        }
+        
+        .feature-box img {
+            width: 64px;
+            height: 64px;
+            transition: var(--transition);
+            filter: drop-shadow(0 5px 15px rgba(38, 224, 127, 0.2));
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-glass">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <div class="brand-container">
+                    <div class="brand-icon-wrapper">
+                        <img src="https://img.icons8.com/ios-filled/50/26e07f/tooth.png" alt="Logo" class="brand-icon">
+                    </div>
+                    <span class="brand-text">مصنع منتجات الأسنان</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">منتجاتنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                </ul>
+                <div class="navbar-cta">
+                    <a href="#order" class="btn-navbar-cta">
+                        <span class="btn-text">اطلب الآن</span>
+                        <span class="btn-icon"><i class="fas fa-arrow-left"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- 3D Shapes Animation -->
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center hero-row">
+                <div class="col-lg-6 order-lg-2 hero-content-wrapper">
+                    <div class="hero-content" data-aos="fade-left">
+                        <span class="hero-badge">منتجات أسنان متطورة</span>
+                        <h1 class="hero-title">
+                            أفضل <span class="gradient-text">منتجات طب</span>
+                            <br>
+                            <span class="gradient-text">الأسنان</span> بتقنيات حديثة
+                        </h1>
+                        <p class="hero-description">نصنع منتجات طب الأسنان عالية الجودة بأحدث التقنيات العالمية لضمان أفضل النتائج لعملائنا</p>
+                        
+                        <div class="hero-buttons">
+                            <a href="#order" class="btn-hero-primary">
+                                <span>اطلب منتجاتنا الآن</span>
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                            <a href="#services" class="btn-hero-secondary">
+                                <span>استكشف منتجاتنا</span>
+                            </a>
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="hero-stat-item">
+                                <div class="stat-number">+<span class="counter">25</span></div>
+                                <div class="stat-label">سنوات خبرة</div>
+                            </div>
+                            <div class="hero-stat-item">
+                                <div class="stat-number">+<span class="counter">150</span></div>
+                                <div class="stat-label">منتج متنوع</div>
+                            </div>
+                            <div class="hero-stat-item">
+                                <div class="stat-number">+<span class="counter">500</span></div>
+                                <div class="stat-label">عميل راضٍ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 order-lg-1 hero-image-wrapper">
+                    <div class="hero-image-container">
+                        <div class="hero-image">
+                            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80" alt="منتجات طب الأسنان" class="main-image">
+                            
+                            <div class="floating-badge badge-tech">
+                                <div class="badge-icon">
+                                    <i class="fas fa-microchip" style="color: #26e07f; font-size: 30px;"></i>
+                                </div>
+                                <span>تقنيات متطورة</span>
+                            </div>
+                            
+                            <div class="floating-badge badge-quality">
+                                <div class="badge-icon quality-icon">
+                                    <img src="https://img.icons8.com/ios-filled/50/26e07f/prize.png" alt="جودة">
+                                </div>
+                                <span>جودة عالية</span>
+                                <div class="stars-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-blob"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary px-3 py-2 rounded-pill mb-2">مميزاتنا</span>
+                <h2 class="gradient-text">لماذا تختار منتجاتنا؟</h2>
+                <p>نقدم أفضل المنتجات بأعلى معايير الجودة العالمية</p>
+            </div>
+            <div class="row text-center g-4">
+                <div class="col-md-3">
+                    <div class="feature-box floating-card">
+                        <img src="https://img.icons8.com/ios-filled/50/26e07f/dental-crown.png" alt="Crown"/>
+                        <h5 class="mt-3">جودة عالمية</h5>
+                        <p>منتجات مصنعة وفق أعلى معايير الجودة</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box floating-card">
+                        <i class="fas fa-procedures fa-3x" style="color: #26e07f;"></i>
+                        <h5 class="mt-3">تقنيات متطورة</h5>
+                        <p>نستخدم أحدث التقنيات في التصنيع</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box floating-card">
+                        <i class="fas fa-tooth fa-3x" style="color: #26e07f;"></i>
+                        <h5 class="mt-3">تنوع المنتجات</h5>
+                        <p>مجموعة واسعة من منتجات طب الأسنان</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-box floating-card">
+                        <img src="https://img.icons8.com/ios-filled/50/26e07f/doctor-male.png" alt="Doctor"/>
+                        <h5 class="mt-3">خبراء متخصصون</h5>
+                        <p>فريق من الخبراء في صناعة منتجات الأسنان</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Help -->
+    <section class="emergency-section py-4" style="background: var(--primary-gradient);">
+        <div class="container text-center text-white">
+            <h5>هل تحتاج مساعدة في اختيار المنتجات؟</h5>
+            <p class="mb-0">اتصل بنا: <strong>+1 234 567 890</strong> أو عبر البريد الإلكتروني <strong>sales@dentalproducts.com</strong></p>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="about-wrapper position-relative">
+                <!-- Decorative elements -->
+                <div class="about-blob-1"></div>
+                <div class="about-blob-2"></div>
+                <div class="about-pattern"></div>
+                
+                <div class="text-center mb-5">
+                    <span class="badge bg-primary px-3 py-2 rounded-pill mb-2 animate__animated animate__fadeIn">من نحن</span>
+                    <h2 class="section-title gradient-text animate__animated animate__fadeInUp">نبذة عن مصنعنا</h2>
+                    <div class="title-separator"><div class="separator-line"></div><div class="separator-icon"><i class="fas fa-tooth"></i></div><div class="separator-line"></div></div>
+                </div>
+                
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="about-image-container">
+                            <div class="about-image-wrapper">
+                                <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=600&q=80" alt="Dental Factory" class="about-image">
+                                <div class="image-card-1" data-aos="fade-left" data-aos-delay="300">
+                                    <div class="card-icon"><i class="fas fa-award"></i></div>
+                                    <div class="card-content">
+                                        <h5>جودة عالمية</h5>
+                                        <p>معتمدة من هيئات الجودة العالمية</p>
+                                    </div>
+                                </div>
+                                <div class="image-card-2" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="card-icon"><i class="fas fa-flask"></i></div>
+                                    <div class="card-content">
+                                        <h5>تقنيات متطورة</h5>
+                                        <p>بأحدث التقنيات العالمية</p>
+                                    </div>
+                                </div>
+                                <div class="about-image-shape"></div>
+                            </div>
+                            <div class="experience-badge">
+                                <div class="badge-content">
+                                    <span class="badge-number">25</span>
+                                    <span class="badge-text">سنوات<br>الخبرة</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-content" data-aos="fade-up">
+                            <h3 class="about-subtitle">نحن رواد صناعة منتجات الأسنان</h3>
+                            <p class="about-description">نحن مصنع رائد في إنتاج منتجات طب الأسنان عالية الجودة بأحدث التقنيات وأعلى معايير الجودة العالمية، نسعى دائماً للتطوير والابتكار لتقديم أفضل المنتجات لعملائنا حول العالم.</p>
+                            
+                            <div class="stats-grid">
+                                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div class="stat-number"><span class="counter">25</span>+</div>
+                                    <div class="stat-title">سنوات الخبرة</div>
+                                </div>
+                                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-cubes"></i>
+                                    </div>
+                                    <div class="stat-number"><span class="counter">150</span>+</div>
+                                    <div class="stat-title">منتج مختلف</div>
+                                </div>
+                                <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-globe-asia"></i>
+                                    </div>
+                                    <div class="stat-number"><span class="counter">45</span>+</div>
+                                    <div class="stat-title">دولة نصدر لها</div>
+                                </div>
+                                <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="stat-number"><span class="counter">500</span>+</div>
+                                    <div class="stat-title">عميل راضٍ</div>
+                                </div>
+                            </div>
+                            
+                            <div class="about-cta">
+                                <a href="about.html" class="btn-about-more">
+                                    <span>اقرأ المزيد عنا</span>
+                                    <i class="fas fa-long-arrow-alt-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="products-section py-5">
+        <div class="container">
+            <div class="text-center mb-5 animate__animated animate__fadeIn">
+                <span class="badge bg-primary px-3 py-2 rounded-pill mb-2">منتجاتنا</span>
+                <h2 class="gradient-text">منتجاتنا الرئيسية</h2>
+                <p>مجموعة متكاملة من منتجات طب الأسنان عالية الجودة</p>
+            </div>
+            
+            <div class="products-wrapper position-relative">
+                <div class="blob-shape"></div>
+                <div class="blob-shape-2"></div>
+                
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card-modern h-100">
+                            <div class="product-icon-wrapper">
+                                <div class="product-icon-bg"></div>
+                                <img src="https://img.icons8.com/ios-filled/100/26e07f/dental-implant.png" alt="زراعة الأسنان" class="product-icon">
+                            </div>
+                            <div class="product-content">
+                                <h3 class="gradient-text">زراعة الأسنان</h3>
+                                <ul class="feature-list-modern">
+                                    <li><span class="feature-bullet"></span>غرسات تيتانيوم</li>
+                                    <li><span class="feature-bullet"></span>أنظمة زراعة متكاملة</li>
+                                    <li><span class="feature-bullet"></span>أدوات جراحية للزراعة</li>
+                                </ul>
+                                <a href="#" class="btn-modern">
+                                    <span>عرض المنتجات</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card-modern h-100">
+                            <div class="product-icon-wrapper">
+                                <div class="product-icon-bg"></div>
+                                <img src="https://cdn-icons-png.flaticon.com/512/2869/2869655.png" alt="منتجات تجميلية" class="product-icon">
+                            </div>
+                            <div class="product-content">
+                                <h3 class="gradient-text">منتجات تجميلية</h3>
+                                <ul class="feature-list-modern">
+                                    <li><span class="feature-bullet"></span>مواد تبييض الأسنان</li>
+                                    <li><span class="feature-bullet"></span>قشور خزفية</li>
+                                    <li><span class="feature-bullet"></span>مواد تجميل الابتسامة</li>
+                                </ul>
+                                <a href="#" class="btn-modern">
+                                    <span>عرض المنتجات</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6">
+                        <div class="product-card-modern h-100">
+                            <div class="product-icon-wrapper">
+                                <div class="product-icon-bg"></div>
+                                  <img src="https://cdn-icons-png.flaticon.com/512/3100/3100425.png" alt="أدوات طب الأسنان" class="product-icon">
+                            </div>
+                            <div class="product-content">
+                                <h3 class="gradient-text">أدوات طب الأسنان</h3>
+                                <ul class="feature-list-modern">
+                                    <li><span class="feature-bullet"></span>حشوات وأدوات تنظيف</li>
+                                    <li><span class="feature-bullet"></span>أدوات علاج الجذور</li>
+                                    <li><span class="feature-bullet"></span>معدات تعقيم</li>
+                                </ul>
+                                <a href="#" class="btn-modern">
+                                    <span>عرض المنتجات</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order-section py-5">
+        <div class="container">
+            <div class="order-wrapper position-relative">
+                <!-- Decorative elements -->
+                <div class="order-blob"></div>
+                <div class="order-shape"></div>
+                <div class="order-dots"></div>
+                
+                <div class="text-center mb-5">
+                    <span class="badge bg-primary px-3 py-2 rounded-pill mb-2 animate__animated animate__fadeIn">طلب المنتجات</span>
+                    <h2 class="section-title gradient-text animate__animated animate__fadeInUp">اطلب منتجاتنا</h2>
+                    <div class="title-separator"><div class="separator-line"></div><div class="separator-icon"><i class="fas fa-paper-plane"></i></div><div class="separator-line"></div></div>
+                    <p class="section-subtitle">املأ النموذج وسيتواصل معك فريق المبيعات قريباً</p>
+                </div>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="order-card" data-aos="fade-up">
+                            <div class="order-card-shape"></div>
+                            <div class="order-form-container">
+                                <form class="order-form">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="form-group floating-label">
+                                                <input type="text" class="form-control custom-input" id="companyName" required>
+                                                <label for="companyName" class="form-label">اسم الشركة/العيادة</label>
+                                                <div class="input-icon">
+                                                    <i class="fas fa-building"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group floating-label">
+                                                <input type="email" class="form-control custom-input" id="email" required>
+                                                <label for="email" class="form-label">البريد الإلكتروني</label>
+                                                <div class="input-icon">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group floating-label">
+                                                <input type="tel" class="form-control custom-input" id="phone" required>
+                                                <label for="phone" class="form-label">رقم الهاتف</label>
+                                                <div class="input-icon">
+                                                    <i class="fas fa-phone-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group floating-label">
+                                                <select class="form-control custom-input custom-select" id="productCategory" required>
+                                                    <option value="" selected disabled></option>
+                                                    <option value="implants">منتجات زراعة الأسنان</option>
+                                                    <option value="cosmetic">منتجات تجميلية</option>
+                                                    <option value="tools">أدوات طب الأسنان</option>
+                                                    <option value="all">جميع المنتجات</option>
+                                                </select>
+                                                <label for="productCategory" class="form-label">فئة المنتج</label>
+                                                <div class="input-icon">
+                                                    <i class="fas fa-tag"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group floating-label">
+                                                <textarea class="form-control custom-input custom-textarea" id="notes" rows="3"></textarea>
+                                                <label for="notes" class="form-label">ملاحظات إضافية</label>
+                                                <div class="input-icon">
+                                                    <i class="fas fa-comment-alt"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center mt-4">
+                                            <button type="submit" class="btn-order-submit">
+                                                <span class="btn-text">إرسال الطلب</span>
+                                                <div class="btn-icon">
+                                                    <i class="fas fa-paper-plane"></i>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="promo-badge">
+                                <div class="badge-inner">
+                                    <div class="discount">10<span class="percent">%</span></div>
+                                    <div class="badge-text">خصم<br>للطلب الأول</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="order-features">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="feature-text">شحن سريع لجميع الدول</div>
+                            </div>
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="feature-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="feature-text">منتجات معتمدة عالمياً</div>
+                            </div>
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="feature-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="feature-text">دعم فني على مدار الساعة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section py-5">
+        <div class="container">
+            <div class="section-heading text-center mb-5 animate__animated animate__fadeIn">
+                <span class="badge bg-primary px-3 py-2 rounded-pill mb-2">آراء العملاء</span>
+                <h2 class="gradient-text">آراء عملائنا</h2>
+                <p>ماذا يقول عملاؤنا عن منتجاتنا</p>
+            </div>
+            
+            <div class="testimonials-wrapper position-relative">
+                <div class="testimonial-blob"></div>
+                <div class="testimonial-blob-2"></div>
+                
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-4">
+                        <div class="testimonial-card h-100 animate__animated animate__fadeInUp">
+                            <div class="testimonial-pattern"></div>
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p class="testimonial-text">"منتجات ممتازة وجودة عالية. أنصح بها بشدة لجميع العيادات!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                                </div>
+                                <div class="author-info">
+                                    <h5>د. أحمد محمد</h5>
+                                    <span>مركز طب أسنان</span>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="testimonial-card h-100 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                            <div class="testimonial-pattern"></div>
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p class="testimonial-text">"منتجات عالية الجودة وخدمة عملاء ممتازة"</p>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                                </div>
+                                <div class="author-info">
+                                    <h5>د. سارة أحمد</h5>
+                                    <span>عيادة أسنان خاصة</span>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="testimonial-card h-100 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                            <div class="testimonial-pattern"></div>
+                            <div class="testimonial-quote">
+                                <i class="fas fa-quote-right"></i>
+                            </div>
+                            <p class="testimonial-text">"نستخدم منتجاتهم منذ سنوات. جودة ممتازة وأسعار منافسة!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Client">
+                                </div>
+                                <div class="author-info">
+                                    <h5>د. محمود علي</h5>
+                                    <span>مستشفى الأسنان التخصصي</span>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="cta-card animate__animated animate__fadeIn">
+                        <div class="cta-bg-elements">
+                            <div class="cta-circle"></div>
+                            <div class="cta-circle cta-circle-2"></div>
+                            <div class="cta-dots"></div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <div class="cta-content">
+                                    <h2 class="cta-title">جاهز لتجربة منتجاتنا عالية الجودة؟</h2>
+                                    <p class="cta-text">احصل على خصم <span class="highlight">10%</span> على أول طلب مع رمز الخصم</p>
+                                    <div class="discount-badge">
+                                        <span>DENT2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-lg-end text-center mt-4 mt-lg-0">
+                                <a href="#order" class="cta-btn">
+                                    <span>اطلب الآن</span>
+                                    <i class="fas fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-2025">
+        <div class="footer-waves">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="rgba(38, 224, 127, 0.1)" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,112C384,107,480,117,576,144C672,171,768,213,864,208C960,203,1056,149,1152,133.3C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-brand">
+                            <div class="footer-logo">
+                                <div class="footer-logo-icon">
+                                    <img src="https://img.icons8.com/ios-filled/50/ffffff/tooth.png" alt="Logo">
+                                </div>
+                                <h4 class="footer-logo-text">مصنع منتجات الأسنان</h4>
+                            </div>
+                            <p class="footer-description">
+                                نصنع أفضل منتجات طب الأسنان بأحدث التقنيات العالمية لضمان أعلى مستويات الجودة والكفاءة
+                            </p>
+                            <div class="footer-social">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-links">
+                            <h5 class="footer-heading">روابط سريعة</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html">الرئيسية</a></li>
+                                <li><a href="about.html">من نحن</a></li>
+                                <li><a href="services.html">منتجاتنا</a></li>
+                                <li><a href="contact.html">اتصل بنا</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <div class="footer-contact">
+                            <h5 class="footer-heading">اتصل بنا</h5>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <div class="icon-container">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <p>123 شارع الصناعة، المنطقة الصناعية</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="icon-container">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <p>+1 234 567 890</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="icon-container">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <p>info@dentalproducts.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newsletter-form">
+                                <div class="form-container">
+                                    <input type="email" class="form-control" placeholder="البريد الإلكتروني">
+                                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>© 2025 مصنع منتجات الأسنان. جميع الحقوق محفوظة.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS animation library
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out'
+        });
+    
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-glass');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Counter animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const counters = document.querySelectorAll('.counter');
+            
+            counters.forEach(counter => {
+                const target = +counter.innerText;
+                let startValue = 0;
+                let duration = 2000;
+                let startTime = null;
+                
+                // Set data-target attribute if not already set
+                counter.setAttribute('data-target', target);
+                
+                // Start at 0
+                counter.innerText = '0';
+                
+                // Animation function
+                function countUp(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    
+                    const progress = Math.min((timestamp - startTime) / duration, 1);
+                    const currentValue = Math.floor(progress * target);
+                    
+                    counter.innerText = currentValue;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(countUp);
+                    } else {
+                        counter.innerText = target;
+                    }
+                }
+                
+                // Intersection Observer to trigger animation when in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            requestAnimationFrame(countUp);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.2
+                });
+                
+                observer.observe(counter);
+            });
+            
+            // Animate floating badges
+            const animateCSS = (element, animation, speed = 'normal', delay = 0) => {
+                return new Promise((resolve) => {
+                    const nodes = document.querySelectorAll(element);
+                    
+                    nodes.forEach(node => {
+                        node.style.setProperty('--animate-duration', speed);
+                        node.style.setProperty('--animate-delay', delay + 's');
+                        node.classList.add('animate__animated', `animate__${animation}`);
+                        
+                        node.addEventListener('animationend', function handler() {
+                            node.classList.remove('animate__animated', `animate__${animation}`);
+                            node.removeEventListener('animationend', handler);
+                            resolve('Animation ended');
+                        });
+                    });
+                });
+            };
+            
+            // Trigger animations when elements come into view
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('hero-badge')) {
+                            animateCSS('.hero-badge', 'fadeIn', '0.8s');
+                        } else if (entry.target.classList.contains('hero-title')) {
+                            animateCSS('.hero-title', 'fadeInUp', '1s', 0.2);
+                        } else if (entry.target.classList.contains('hero-description')) {
+                            animateCSS('.hero-description', 'fadeInUp', '1s', 0.4);
+                        } else if (entry.target.classList.contains('hero-buttons')) {
+                            animateCSS('.hero-buttons', 'fadeInUp', '1s', 0.6);
+                        } else if (entry.target.classList.contains('hero-stats')) {
+                            animateCSS('.hero-stats', 'fadeInUp', '1s', 0.8);
+                        } else if (entry.target.classList.contains('hero-image')) {
+                            animateCSS('.hero-image', 'zoomIn', '1.2s', 0.3);
+                        }
+                        animationObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements to animate
+            const elementsToAnimate = document.querySelectorAll('.hero-badge, .hero-title, .hero-description, .hero-buttons, .hero-stats, .hero-image');
+            elementsToAnimate.forEach(element => {
+                animationObserver.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
