@@ -149,33 +149,48 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-glass">
+    <nav class="navbar-simple">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <div class="brand-container">
-                    <div class="brand-icon-wrapper">
-                        <img src="https://img.icons8.com/ios-filled/50/26e07f/tooth.png" alt="Logo" class="brand-icon">
-                    </div>
-                    <span class="brand-text">مصنع منتجات الأسنان</span>
+            <!-- Brand -->
+            <a class="navbar-brand-simple" href="index.html">
+                <div class="brand-logo">
+                    <img src="https://img.icons8.com/ios-filled/50/tooth.png" alt="Logo">
                 </div>
+                <span class="brand-title">مصنع منتجات الأسنان</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">من نحن</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">منتجاتنا</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
-                </ul>
-                <div class="navbar-cta">
-                    <a href="#order" class="btn-navbar-cta">
-                        <span class="btn-text">اطلب الآن</span>
-                        <span class="btn-icon"><i class="fas fa-arrow-left"></i></span>
+            
+            <!-- Menu -->
+            <ul class="nav-list" id="navList">
+                <li class="nav-item-simple">
+                    <a class="nav-link-simple" href="index.html">الرئيسية</a>
+                </li>
+                <li class="nav-item-simple">
+                    <a class="nav-link-simple active" href="about.html">من نحن</a>
+                </li>
+                <li class="nav-item-simple">
+                    <a class="nav-link-simple" href="services.html">منتجاتنا</a>
+                </li>
+                <li class="nav-item-simple">
+                    <a class="nav-link-simple" href="contact.html">اتصل بنا</a>
+                </li>
+                <li class="nav-item-simple">
+                    <a href="#order" class="cta-button">
+                        <span>اطلب الآن</span>
+                        <i class="fas fa-arrow-left"></i>
                     </a>
-                </div>
-            </div>
+                </li>
+            </ul>
+            
+            <!-- CTA Button على اليسار -->
+            <a href="#order" class="cta-button">
+                <span>اطلب الآن</span>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -820,7 +835,7 @@
                                     <a href="contact.html" class="btn-cta-2025">
                                         <span class="btn-text">تواصل معنا</span>
                                         <div class="btn-icon">
-                                            <i class="fas fa-arrow-left"></i>
+                                            <i class="fas fa-arrow-left" ></i>
                                         </div>
                                         <div class="btn-shine"></div>
                                     </a>
@@ -939,16 +954,50 @@
         
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar-glass');
-            if (window.scrollY > 50) {
+            const navbar = document.querySelector('.navbar-simple');
+            if (navbar && window.scrollY > 50) {
                 navbar.classList.add('scrolled');
-            } else {
+            } else if (navbar) {
                 navbar.classList.remove('scrolled');
             }
         });
-
-        // Timeline interaction
+        
+        // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Simple navbar toggle (sidebar)
+            const menuToggle = document.getElementById('menuToggle');
+            const navList = document.getElementById('navList');
+            
+            if (menuToggle && navList) {
+                menuToggle.addEventListener('click', function() {
+                    navList.classList.toggle('show');
+                    this.querySelector('i').classList.toggle('fa-bars');
+                    this.querySelector('i').classList.toggle('fa-times');
+                });
+                
+                // Close menu when clicking on a link
+                const navLinks = document.querySelectorAll('.nav-link-simple');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth < 992) {
+                            navList.classList.remove('show');
+                            menuToggle.querySelector('i').classList.add('fa-bars');
+                            menuToggle.querySelector('i').classList.remove('fa-times');
+                        }
+                    });
+                });
+                
+                // Add window resize event to hide menu on larger screens
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 992) {
+                        navList.classList.remove('show');
+                        menuToggle.querySelector('i').classList.add('fa-bars');
+                        menuToggle.querySelector('i').classList.remove('fa-times');
+                    }
+                });
+            }
+            
+            // Timeline interaction
             const timelinePoints = document.querySelectorAll('.timeline-point');
             const timelineProgress = document.querySelector('.timeline-progress');
             
@@ -962,7 +1011,6 @@
                     if (timelineProgress) {
                         const progressWidth = ((index + 1) / timelinePoints.length) * 100;
                         timelineProgress.style.setProperty('--progress-width', progressWidth + '%');
-                        timelineProgress.querySelector('::before').style.width = progressWidth + '%';
                     }
                 });
             });

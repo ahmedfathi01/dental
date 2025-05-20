@@ -21,33 +21,48 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-glass">
+    <nav class="navbar-simple">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <div class="brand-container">
-                    <div class="brand-icon-wrapper">
-                        <img src="https://img.icons8.com/ios-filled/50/26e07f/tooth.png" alt="Logo" class="brand-icon">
-                    </div>
-                    <span class="brand-text">مصنع منتجات الأسنان</span>
+            <!-- Brand -->
+            <a class="navbar-brand-simple" href="index.html">
+                <div class="brand-logo">
+                    <img src="https://img.icons8.com/ios-filled/50/tooth.png" alt="Logo">
                 </div>
+                <span class="brand-title">مصنع منتجات الأسنان</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">منتجاتنا</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">تواصل معنا</a></li>
-                </ul>
-                <div class="navbar-cta">
-                    <a href="#order" class="btn-navbar-cta">
-                        <span class="btn-text">اطلب الآن</span>
-                        <span class="btn-icon"><i class="fas fa-arrow-left"></i></span>
+            
+            <!-- Menu -->
+            <ul class="nav-list" id="navList">
+                <li class="nav-item-simple">
+                    <a class="nav-link-simple" href="index.html">الرئيسية</a>
+                </li>
+                <li class="nav-item-simple">
+                    <a class="nav-link-simple" href="about.html">من نحن</a>
+                </li>
+                <li class="nav-item-simple">
+                    <a class="nav-link-simple" href="services.html">منتجاتنا</a>
+                </li>
+                <li class="nav-item-simple">
+                    <a class="nav-link-simple active" href="contact.html">اتصل بنا</a>
+                </li>
+                <li class="nav-item-simple">
+                    <a href="#order" class="cta-button">
+                        <span>اطلب الآن</span>
+                        <i class="fas fa-arrow-left"></i>
                     </a>
-                </div>
-            </div>
+                </li>
+            </ul>
+            
+            <!-- CTA Button على اليسار -->
+            <a href="#order" class="cta-button">
+                <span>اطلب الآن</span>
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -199,9 +214,9 @@
     </section>
 
     <!-- Contact Form & Map -->
-    <section id="contact-form" class="py-5 bg-light ">
+    <section id="contact-form" class="py-5 bg-light">
         <div class="container">
-            <div class="row g-5">
+            <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="contact-form form-container">
                         <div class="mb-4">
@@ -210,7 +225,7 @@
                             <p>املأ النموذج التالي وسيقوم فريقنا بالرد عليك في أقرب وقت ممكن</p>
                         </div>
                         <form>
-                            <div class="row g-4">
+                            <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="companyName" placeholder="اسم الشركة/العيادة" required>
@@ -255,7 +270,7 @@
                 <div class="col-lg-6">
                     <div class="map-container h-100">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.469981368283!2d31.2357!3d30.0444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzM5LjgiTiAzMcKwMTQnMDguNSJF!5e0!3m2!1sen!2seg!4v1620000000000!5m2!1sen!2seg" 
-                                width="100%" height="100%" style="border:0; min-height: 450px;" allowfullscreen="" loading="lazy"></iframe>
+                                style="border:0; width:100%; height:100%; min-height: 450px;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -514,16 +529,50 @@
         
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar-glass');
-            if (window.scrollY > 50) {
+            const navbar = document.querySelector('.navbar-simple');
+            if (navbar && window.scrollY > 50) {
                 navbar.classList.add('scrolled');
-            } else {
+            } else if (navbar) {
                 navbar.classList.remove('scrolled');
             }
         });
         
-        // Contact quick links hover effect
+        // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
+            // Simple navbar toggle (sidebar)
+            const menuToggle = document.getElementById('menuToggle');
+            const navList = document.getElementById('navList');
+            
+            if (menuToggle && navList) {
+                menuToggle.addEventListener('click', function() {
+                    navList.classList.toggle('show');
+                    this.querySelector('i').classList.toggle('fa-bars');
+                    this.querySelector('i').classList.toggle('fa-times');
+                });
+                
+                // Close menu when clicking on a link
+                const navLinks = document.querySelectorAll('.nav-link-simple');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth < 992) {
+                            navList.classList.remove('show');
+                            menuToggle.querySelector('i').classList.add('fa-bars');
+                            menuToggle.querySelector('i').classList.remove('fa-times');
+                        }
+                    });
+                });
+                
+                // Add window resize event to hide menu on larger screens
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 992) {
+                        navList.classList.remove('show');
+                        menuToggle.querySelector('i').classList.add('fa-bars');
+                        menuToggle.querySelector('i').classList.remove('fa-times');
+                    }
+                });
+            }
+            
+            // Contact quick links hover effect
             const quickLinks = document.querySelectorAll('.quick-link');
             
             quickLinks.forEach(link => {
@@ -540,12 +589,13 @@
             
             // Animate contact icons on load
             const animateCSS = (element, animation, prefix = 'animate__') =>
-                new Promise((resolve, reject) => {
+                new Promise((resolve) => {
                     const animationName = `${prefix}${animation}`;
                     const node = document.querySelector(element);
                     
                     if (!node) {
-                        reject('Element not found');
+                        console.log(`Element ${element} not found, skipping animation`);
+                        resolve('Element not found');
                         return;
                     }
                     
@@ -560,24 +610,34 @@
                     node.addEventListener('animationend', handleAnimationEnd, {once: true});
                 });
             
-            // Apply animations with slight delays
+            // Apply animations only to elements that exist
             setTimeout(() => {
-                animateCSS('.contact-hero-tag', 'fadeIn');
-                animateCSS('.contact-hero-title', 'fadeInUp');
-                animateCSS('.contact-hero-text', 'fadeInUp');
-                
-                setTimeout(() => {
-                    animateCSS('.contact-methods', 'fadeInUp');
-                    animateCSS('.btn-contact-cta', 'fadeInUp');
-                }, 400);
-                
-                setTimeout(() => {
-                    animateCSS('.contact-animation', 'zoomIn');
-                }, 600);
-                
-                setTimeout(() => {
-                    animateCSS('.contact-quick-links', 'fadeInUp');
-                }, 1000);
+                // Check if hero elements exist before animating
+                const heroContent = document.querySelector('.contact-hero-content');
+                if (heroContent) {
+                    // These selectors should be updated to match what exists in your HTML
+                    const badge = document.querySelector('.contact-badge');
+                    const title = document.querySelector('.hero-title');
+                    const description = document.querySelector('.hero-description');
+                    const methods = document.querySelector('.contact-methods');
+                    
+                    if (badge) animateCSS('.contact-badge', 'fadeIn');
+                    if (title) animateCSS('.hero-title', 'fadeInUp');
+                    if (description) animateCSS('.hero-description', 'fadeInUp');
+                    if (methods) setTimeout(() => animateCSS('.contact-methods', 'fadeInUp'), 400);
+                    
+                    // Only animate the CTA button if it exists
+                    const ctaButton = document.querySelector('.btn-hero-primary');
+                    if (ctaButton) setTimeout(() => animateCSS('.btn-hero-primary', 'fadeInUp'), 400);
+                    
+                    // Animate the visual if it exists
+                    const contactVisual = document.querySelector('.contact-visual');
+                    if (contactVisual) setTimeout(() => animateCSS('.contact-visual', 'zoomIn'), 600);
+                    
+                    // Animate contact channels if they exist
+                    const contactChannels = document.querySelector('.contact-channels');
+                    if (contactChannels) setTimeout(() => animateCSS('.contact-channels', 'fadeInUp'), 1000);
+                }
             }, 300);
         });
     </script>

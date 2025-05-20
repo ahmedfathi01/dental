@@ -200,6 +200,16 @@
     border-color: var(--primary);
 }
 
+/* Shopping cart icon hover effects */
+.btn-hero-secondary:hover .fa-shopping-cart {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.fa-shopping-cart {
+    transition: color 0.3s ease;
+}
+
 /* Product Categories */
 .product-categories {
     display: flex;
@@ -417,7 +427,8 @@
     
     .hero-content-wrapper {
         padding-right: 0;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
+        order: 1;
     }
     
     .hero-content {
@@ -474,17 +485,23 @@
     }
 
     .hero-image-wrapper {
-        order: 1;
-    }
-
-    .hero-content-wrapper {
         order: 2;
+        margin-top: 20px;
     }
 }
 
 @media (max-width: 767px) {
+    .hero-section {
+        padding: 60px 0 40px;
+    }
+    
     .hero-title {
         font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
     
     .btn-hero-primary, .btn-hero-secondary {
@@ -493,6 +510,62 @@
     
     .product-categories {
         flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 5px;
+        justify-content: center;
+    }
+    
+    .hero-image-container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 40px 0 30px;
+    }
+    
+    .hero-content-wrapper {
+        margin-bottom: 20px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .btn-hero-primary, .btn-hero-secondary {
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: center;
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .hero-image-container {
+        max-width: 100%;
+    }
+    
+    .floating-badge {
+        padding: 10px;
+        margin: 10px 5px;
+        transform: scale(0.9);
+    }
+    
+    .category-item {
+        width: 30%;
     }
 }
 
@@ -1380,6 +1453,12 @@
     transform: translateX(-5px);
 }
 
+/* Shopping cart icon hover effects */
+.btn-cta-secondary:hover .fa-shopping-cart {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
 /* Offer Card Styles */
 .cta-offer-card {
     background: var(--primary-gradient);
@@ -1601,4 +1680,26 @@
     .offer-card-header {
         justify-content: center;
     }
+}
+
+/* Add complete hover styles for all shopping cart icons */
+.btn-hero-secondary:hover .fa-shopping-cart,
+.btn-outline-primary:hover .fa-shopping-cart,
+.btn-cta-secondary:hover .fa-shopping-cart {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+.fa-shopping-cart {
+    transition: color 0.3s ease;
+}
+
+/* CSS for Bootstrap outline buttons */
+.btn-outline-primary:hover {
+    color: white !important;
+    background: var(--primary-gradient) !important;
+}
+
+.btn-outline-primary:hover .fa-shopping-cart {
+    color: white !important;
 } 
